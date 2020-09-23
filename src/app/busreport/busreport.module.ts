@@ -1,18 +1,24 @@
-import { NgModule } from '@angular/core';
+import { CommonModule } from "@angular/common";
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule as AngularCommonModule } from '@angular/common';
+import {ColorStatusPipe} from '../pipes/color.status';
 
 import { BusReportComponent } from './busreport.component';
 import { BusReportRoutingModule } from './busreport-routing.module';
-//import { CommonModule } from '../common/common.module';
-
+/* Angular material */
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AngularMaterialModule } from '../angular-material.module';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { RouteVariantPipe } from '../pipes/route-variant';
 
 @NgModule({
-  declarations: [BusReportComponent ],
+  declarations: [BusReportComponent, RouteVariantPipe, ColorStatusPipe ],
   imports: [
     BusReportRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AngularMaterialModule,
+    CommonModule
   ],
   providers: []
 

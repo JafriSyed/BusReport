@@ -1,0 +1,27 @@
+.notes{
+width: 100%;
+
+}
+
+.mat-row:not(:nth-child(even)){
+  background-color: #5c5b5b;
+}
+
+.mat-expansion-panel{
+  padding: 2px;;
+}
+
+.mat-header{
+  border: gray 1px solid;
+}
+
+.label {
+  color: white;
+  padding: 8px;
+}
+
+.success {background-color: #4CAF50;} /* Green */
+.info {background-color: #2196F3;} /* Blue */
+.warning {background-color: #ff9800;} /* Orange */
+.danger {background-color: #f44336;} /* Red */
+.other {background-color: #6b6b6b; } /* Gray */

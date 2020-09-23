@@ -1,5 +1,5 @@
 {
-  "folderUrl": "",
+  "dataFolderUrl": "/assets/data/bus-services-data.json",
   "production": "false",
   "environmentName": "Local",
   "version": "0.0.1"
