@@ -8,6 +8,7 @@ import { MatSidenav } from '@angular/material/sidenav';
 
 export class AppComponent {
   opened = true;
+  title = 'Transport NSW';
   @ViewChild('sidenav', { static: true }) sidenav: MatSidenav;
 
   ngOnInit() {

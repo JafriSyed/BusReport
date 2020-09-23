@@ -2,7 +2,7 @@ import { BusInfo } from "./bus-info";
 
 
 export class Organisation {
-    name: string;
+    organisation: string;
     date: Date;
     busData: BusInfo[];
     notes:string;

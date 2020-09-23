@@ -16,9 +16,8 @@ export class BusReportService {
   }
 
   getBusInfo():Observable<BusReport>{
-    let apiUrl:string = '/assets/data/bus-services-data.json';
 
-    const response = this.httpClient.get<BusReport>(apiUrl);
+    const response = this.httpClient.get<BusReport>(this.dataFolderUrl);
 
     return response;
   }

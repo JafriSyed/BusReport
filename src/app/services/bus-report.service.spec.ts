@@ -1,52 +1,33 @@
 import { TestBed, inject } from '@angular/core/testing';
-
-import { BusDataService } from './bus-data.service';
+import { BusReportService } from './bus-report.service';
 import {HttpClientTestingModule, HttpTestingController} from '@angular/common/http/testing';
-import { ReportMaster } from '../models/bus-report';
 import { Organisation } from '../models/organisation';
+import { ConfigService } from '../core/config.service';
 
 
-describe('BusDataService', () => {
+describe('BusReportService', () => {
 
-  let service : BusDataService;
+  let service : BusReportService;
+  let configService : ConfigService;
   let httpMock : HttpTestingController;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [BusDataService],
+      providers: [BusReportService, ConfigService],
       imports:[HttpClientTestingModule]
     });
 
-    service = TestBed.get(BusDataService);
+    service = TestBed.get(BusReportService);
     httpMock = TestBed.get(HttpTestingController);
+    configService = TestBed.get(ConfigService);
   });
 
  afterEach(() =>{
-  httpMock.verify();
+
  });
 
-  it('should be created', (done) => {
-    expect(service).toBeTruthy();
-    done();
-  });
 
-  it('should return json data',  (done) => {
-    const reportData = new ReportMaster();
-    const organisation = new Organisation();
-    organisation.organisation = "NSW Transport";
-    reportData.data = [organisation];
 
-    service.getData().subscribe(
-      data=>{
-        expect(data.data).toBeTruthy();
-        expect(data.data[0].organisation).toBe(organisation.organisation);
-        done();
-      }
 
-    );
-
-    const req = httpMock.expectOne('/assets/data/bus-services-data.json');
-    req.flush(reportData);
-
-  });
 });
+

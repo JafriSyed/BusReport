@@ -18,7 +18,7 @@ import { ViewEncapsulation } from '@angular/core';
 
 export class BusReportComponent implements OnInit {
   displayedColumns=['busId','routeVariant','status'];
-  public orgs: Organisation[];
+   orgs: Organisation[];
   constructor(private busReportService: BusReportService){
 
   }

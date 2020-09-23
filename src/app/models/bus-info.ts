@@ -3,5 +3,4 @@ export class BusInfo {
     routeVariant : string;
     deviationFromTimetable: number;
     status:string;
-    color:string;
 }

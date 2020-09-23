@@ -11,8 +11,10 @@ import { AngularMaterialModule } from '../angular-material.module';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouteVariantPipe } from '../pipes/route-variant';
 
+import { OrganisationComponent } from '../organisation/organisation.component';
+
 @NgModule({
-  declarations: [BusReportComponent, RouteVariantPipe, ColorStatusPipe ],
+  declarations: [BusReportComponent, RouteVariantPipe, ColorStatusPipe, OrganisationComponent ],
   imports: [
     BusReportRoutingModule,
     FormsModule,
