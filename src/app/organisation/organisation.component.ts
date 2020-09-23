@@ -31,7 +31,7 @@ export class OrganisationComponent implements OnInit {
   }
 
   saveNotes():void{
-    alert('Following notes have been saved in a blackhole. \n' + this.organisation.notes)
+    alert('Following notes have been saved. \n' + this.organisation.notes)
   }
 
   sortData(sort: Sort) {

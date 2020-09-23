@@ -19,15 +19,11 @@ describe('BusReportService', () => {
 
     service = TestBed.get(BusReportService);
     httpMock = TestBed.get(HttpTestingController);
-    configService = TestBed.get(ConfigService);
   });
 
  afterEach(() =>{
 
  });
-
-
-
 
 });
 
