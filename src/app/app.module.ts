@@ -7,7 +7,6 @@ import { CommonModule } from "@angular/common";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularMaterialModule } from './angular-material.module';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { CoreModule } from './core/core.module';
 import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
@@ -20,8 +19,7 @@ import { HttpClientModule } from '@angular/common/http';
     AngularMaterialModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    CommonModule,
-    CoreModule.forRoot()
+    CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent],

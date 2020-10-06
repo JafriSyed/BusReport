@@ -1,29 +1,28 @@
-import { TestBed, inject } from '@angular/core/testing';
+import { TestBed, getTestBed, inject, tick, fakeAsync } from '@angular/core/testing';
+import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { BusReportService } from './bus-report.service';
-import {HttpClientTestingModule, HttpTestingController} from '@angular/common/http/testing';
-import { Organisation } from '../models/organisation';
-import { ConfigService } from '../core/config.service';
-
 
 describe('BusReportService', () => {
-
-  let service : BusReportService;
-  let configService : ConfigService;
-  let httpMock : HttpTestingController;
+  let injector: TestBed;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [BusReportService, ConfigService],
-      imports:[HttpClientTestingModule]
+      imports: [HttpClientTestingModule],
+      providers: [BusReportService],
     });
 
-    service = TestBed.get(BusReportService);
-    httpMock = TestBed.get(HttpTestingController);
+    injector = getTestBed();
   });
 
- afterEach(() =>{
+  it('url should be correctly pointing to Json file', inject([HttpTestingController, BusReportService],
+    fakeAsync((httpMock: HttpTestingController, apiService: BusReportService) => {
+      expect(apiService).toBeTruthy();
+      expect(apiService.dataFolderUrl.endsWith('bus-services-data.json')).toBeTrue();
+      httpMock.verify();
+      tick();
+    }
+  ))
+);
 
- });
 
 });
-

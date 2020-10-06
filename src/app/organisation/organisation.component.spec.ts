@@ -1,4 +1,7 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { HttpClient, HttpHandler } from '@angular/common/http';
+import { async, ComponentFixture, inject, TestBed } from '@angular/core/testing';
+import { BusReport } from '../models/bus-report';
+import { BusReportService } from '../services/bus-report.service';
 
 import { OrganisationComponent } from './organisation.component';
 
@@ -9,7 +12,8 @@ describe('OrganisationComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ OrganisationComponent ]
+      declarations: [ OrganisationComponent ],
+      providers: [BusReportService, HttpClient, HttpHandler],
     })
     .compileComponents();
   }));
@@ -28,5 +32,4 @@ describe('OrganisationComponent', () => {
     component.setActivePanel(1);
     expect(component.openIndex).toBe(1);
   });
-
 });

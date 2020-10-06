@@ -1,10 +1,8 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { BusReport } from '../models/bus-report';
 import { Organisation } from '../models/organisation';
 import { BusReportService } from '../services/bus-report.service';
-import { RouteVariantPipe } from '../pipes/route-variant';
 import { ViewEncapsulation } from '@angular/core';
 
 @Component({
@@ -17,9 +15,10 @@ import { ViewEncapsulation } from '@angular/core';
 
 
 export class BusReportComponent implements OnInit {
-  displayedColumns=['busId','routeVariant','status'];
-   orgs: Organisation[];
-  constructor(private busReportService: BusReportService){
+  displayedColumns = ['busId', 'routeVariant', 'status'];
+  public organisations: Organisation[];
+
+  constructor(private busReportService: BusReportService) {
 
   }
 
@@ -27,13 +26,11 @@ export class BusReportComponent implements OnInit {
     this.loadBusInfo();
   }
 
-  loadBusInfo():Observable<BusReport>{
-    const ob = this.busReportService.getBusInfo();
-    ob.subscribe(
+  loadBusInfo() {
+    this.busReportService.getBusInfo().subscribe(
       data =>{
-        this.orgs = data.data;
-        console.log(this.orgs);
+        this.organisations = data.data;
+        console.log(this.organisations);
       });
-      return ob;
   }
 }

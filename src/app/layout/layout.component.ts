@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRouteSnapshot, ActivatedRoute, Router } from '@angular/router';
 
 @Component({
-  selector: 'hcf-layout',
+  selector: 'busreport-layout',
   templateUrl: './layout.component.html',
   styleUrls: ['./layout.component.scss']
 })

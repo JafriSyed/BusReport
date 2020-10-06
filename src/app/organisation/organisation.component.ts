@@ -11,12 +11,12 @@ import { Organisation } from '../models/organisation';
 
 export class OrganisationComponent implements OnInit {
 
-  @Input() organisation:Organisation;
+  @Input() organisation: Organisation;
   sortedData: BusInfo[];
-  displayedColumns=['busId','routeVariant','status'];
+  displayedColumns = ['busId', 'routeVariant', 'status'];
   openIndex : number;
   constructor() {
-    if(!this.organisation){
+    if (!this.organisation) {
       this.organisation = new Organisation();
     }
   }
@@ -25,12 +25,12 @@ export class OrganisationComponent implements OnInit {
 
   }
 
-  setActivePanel(orgDisplayIndex:number):void{
+  setActivePanel(orgDisplayIndex: number): void {
     this.openIndex = orgDisplayIndex;
 
   }
 
-  saveNotes():void{
+  saveNotes(): void {
     alert('Following notes have been saved. \n' + this.organisation.notes)
   }
 
